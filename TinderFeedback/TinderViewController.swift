@@ -46,8 +46,6 @@ class TinderViewController: UIViewController {
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
         button.setImage(UIImage(named: imageName), for: .normal)
-//        button.layer.borderColor = UIColor.white.cgColor
-//        button.layer.borderWidth = 1.0
         button.layer.cornerRadius = 35.0
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -58,8 +56,6 @@ class TinderViewController: UIViewController {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: imageName), for: .normal)
         button.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
-//        button.layer.borderColor = UIColor.white.cgColor
-//        button.layer.borderWidth = 1.0
         button.layer.cornerRadius = 35.0
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -70,12 +66,34 @@ class TinderViewController: UIViewController {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: imageName), for: .normal)
         button.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
-//        button.layer.borderColor = UIColor.white.cgColor
-//        button.layer.borderWidth = 1.0
         button.layer.cornerRadius = 35.0
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+
+    let labelTitleEnd: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir-Light", size: 35)
+        label.textAlignment = .center
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "That's it for now!"
+
+        return label
+    }()
+
+    let labelMessageEnd: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Avenir-Light", size: 19)
+        label.sizeToFit()
+        label.textAlignment = .center
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Your visitors are grateful\nfor your attention"
+
+        return label
     }()
 
     override func viewDidLoad() {
@@ -84,6 +102,23 @@ class TinderViewController: UIViewController {
 
         let lastFeedback = self.viewModel.feedbackModels.last
         setupBackgroundFor(feedback: lastFeedback!)
+
+
+        // add end labels
+        view.addSubview(labelTitleEnd)
+        view.addSubview(labelMessageEnd)
+
+        
+        labelMessageEnd.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        labelMessageEnd.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        labelMessageEnd.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        labelMessageEnd.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        labelTitleEnd.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        labelTitleEnd.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        labelTitleEnd.bottomAnchor.constraint(equalTo: labelMessageEnd.topAnchor, constant: -10).isActive = true
+        labelTitleEnd.heightAnchor.constraint(equalToConstant: 40).isActive = true
+
 
         // add options stack view
         view.addSubview(stackivew)
@@ -128,7 +163,6 @@ class TinderViewController: UIViewController {
         swipeView?.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
     }
 
-
     func setupBackgroundFor(feedback: FeedbackModel) {
         view.backgroundColor = Utils.colorForRating(rating: feedback.rating)
     }
@@ -155,6 +189,10 @@ extension TinderViewController: MDCSwipeToChooseDelegate {
             print("Photo deleted!")
         } else {
             print("Photo saved!")
+        }
+        
+        if currentFeedbackIndex == self.viewModel.feedbackModels.count {
+            stackivew.alpha = 0.0
         }
     }
 }
