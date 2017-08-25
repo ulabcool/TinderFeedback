@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47F9AD873D2AA6AA43B6738B /* Pods_TinderFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1EE289C3C82663588E10A8 /* Pods_TinderFeedback.framework */; };
+		C5FE59C51F50111300C8483E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE59C41F50111300C8483E /* AppDelegate.swift */; };
+		C5FE59C71F50111300C8483E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE59C61F50111300C8483E /* ViewController.swift */; };
+		C5FE59CA1F50111300C8483E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FE59C81F50111300C8483E /* Main.storyboard */; };
+		C5FE59CC1F50111400C8483E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FE59CB1F50111400C8483E /* Assets.xcassets */; };
+		C5FE59CF1F50111400C8483E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5FE59CD1F50111400C8483E /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B1EE289C3C82663588E10A8 /* Pods_TinderFeedback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderFeedback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5619514CCC90C2C84B0D48C2 /* Pods-TinderFeedback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderFeedback.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinderFeedback/Pods-TinderFeedback.release.xcconfig"; sourceTree = "<group>"; };
+		C5FE59C11F50111300C8483E /* TinderFeedback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderFeedback.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5FE59C41F50111300C8483E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C5FE59C61F50111300C8483E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C5FE59C91F50111300C8483E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C5FE59CB1F50111400C8483E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5FE59CE1F50111400C8483E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C5FE59D01F50111400C8483E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFA44C4031EAF475426DA01D /* Pods-TinderFeedback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderFeedback.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinderFeedback/Pods-TinderFeedback.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5FE59BE1F50111300C8483E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F9AD873D2AA6AA43B6738B /* Pods_TinderFeedback.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		583FEEB09E8B799BDBB56612 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B1EE289C3C82663588E10A8 /* Pods_TinderFeedback.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5FE59B81F50111300C8483E = {
+			isa = PBXGroup;
+			children = (
+				C5FE59C31F50111300C8483E /* TinderFeedback */,
+				C5FE59C21F50111300C8483E /* Products */,
+				DC5B5C3104EB4386384749D1 /* Pods */,
+				583FEEB09E8B799BDBB56612 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C5FE59C21F50111300C8483E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE59C11F50111300C8483E /* TinderFeedback.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5FE59C31F50111300C8483E /* TinderFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				C5FE59C41F50111300C8483E /* AppDelegate.swift */,
+				C5FE59C61F50111300C8483E /* ViewController.swift */,
+				C5FE59C81F50111300C8483E /* Main.storyboard */,
+				C5FE59CB1F50111400C8483E /* Assets.xcassets */,
+				C5FE59CD1F50111400C8483E /* LaunchScreen.storyboard */,
+				C5FE59D01F50111400C8483E /* Info.plist */,
+			);
+			path = TinderFeedback;
+			sourceTree = "<group>";
+		};
+		DC5B5C3104EB4386384749D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFA44C4031EAF475426DA01D /* Pods-TinderFeedback.debug.xcconfig */,
+				5619514CCC90C2C84B0D48C2 /* Pods-TinderFeedback.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5FE59C01F50111300C8483E /* TinderFeedback */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5FE59D31F50111400C8483E /* Build configuration list for PBXNativeTarget "TinderFeedback" */;
+			buildPhases = (
+				84D441392A2EBBB184831081 /* [CP] Check Pods Manifest.lock */,
+				C5FE59BD1F50111300C8483E /* Sources */,
+				C5FE59BE1F50111300C8483E /* Frameworks */,
+				C5FE59BF1F50111300C8483E /* Resources */,
+				3B22029D9C1EF6C5A493D732 /* [CP] Embed Pods Frameworks */,
+				ED3D2DA67BBC6E9ABA974072 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinderFeedback;
+			productName = TinderFeedback;
+			productReference = C5FE59C11F50111300C8483E /* TinderFeedback.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C5FE59B91F50111300C8483E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Adil Bougamza";
+				TargetAttributes = {
+					C5FE59C01F50111300C8483E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 24ZZS38JW5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C5FE59BC1F50111300C8483E /* Build configuration list for PBXProject "TinderFeedback" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C5FE59B81F50111300C8483E;
+			productRefGroup = C5FE59C21F50111300C8483E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5FE59C01F50111300C8483E /* TinderFeedback */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C5FE59BF1F50111300C8483E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5FE59CF1F50111400C8483E /* LaunchScreen.storyboard in Resources */,
+				C5FE59CC1F50111400C8483E /* Assets.xcassets in Resources */,
+				C5FE59CA1F50111300C8483E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B22029D9C1EF6C5A493D732 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinderFeedback/Pods-TinderFeedback-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84D441392A2EBBB184831081 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED3D2DA67BBC6E9ABA974072 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinderFeedback/Pods-TinderFeedback-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C5FE59BD1F50111300C8483E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5FE59C71F50111300C8483E /* ViewController.swift in Sources */,
+				C5FE59C51F50111300C8483E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C5FE59C81F50111300C8483E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5FE59C91F50111300C8483E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C5FE59CD1F50111400C8483E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5FE59CE1F50111400C8483E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C5FE59D11F50111400C8483E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C5FE59D21F50111400C8483E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5FE59D41F50111400C8483E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFA44C4031EAF475426DA01D /* Pods-TinderFeedback.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 24ZZS38JW5;
+				INFOPLIST_FILE = TinderFeedback/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.usabilla.TinderFeedback;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C5FE59D51F50111400C8483E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5619514CCC90C2C84B0D48C2 /* Pods-TinderFeedback.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 24ZZS38JW5;
+				INFOPLIST_FILE = TinderFeedback/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.usabilla.TinderFeedback;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C5FE59BC1F50111300C8483E /* Build configuration list for PBXProject "TinderFeedback" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FE59D11F50111400C8483E /* Debug */,
+				C5FE59D21F50111400C8483E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5FE59D31F50111400C8483E /* Build configuration list for PBXNativeTarget "TinderFeedback" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5FE59D41F50111400C8483E /* Debug */,
+				C5FE59D51F50111400C8483E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C5FE59B91F50111300C8483E /* Project object */;
+}
