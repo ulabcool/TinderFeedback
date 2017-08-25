@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yYf-dE-pPR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Connect View Controller-->
+        <scene sceneID="ppO-e7-Wh6">
+            <objects>
+                <viewController id="yYf-dE-pPR" customClass="ConnectViewController" customModule="TinderFeedback" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f5L-ZA-a9c"/>
+                        <viewControllerLayoutGuide type="bottom" id="gyd-uu-Luq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cl3-iG-FEy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrl-8T-0uo">
+                                <rect key="frame" x="69" y="511" width="237" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="O8i-G2-aze"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="connectAction:" destination="yYf-dE-pPR" eventType="touchUpInside" id="Ucz-c0-YoY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clue" translatesAutoresizingMaskIntoConstraints="NO" id="TXO-O3-P6y">
+                                <rect key="frame" x="86" y="280" width="203" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="HuC-fv-L4O"/>
+                                    <constraint firstAttribute="width" constant="203" id="ri7-is-Pem"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.83137254901960778" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TXO-O3-P6y" firstAttribute="centerY" secondItem="Cl3-iG-FEy" secondAttribute="centerY" id="7xK-Xo-vdw"/>
+                            <constraint firstItem="gyd-uu-Luq" firstAttribute="top" secondItem="wrl-8T-0uo" secondAttribute="bottom" constant="110" id="byd-GW-oyH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wrl-8T-0uo" secondAttribute="trailing" constant="53" id="gNp-gI-e3i"/>
+                            <constraint firstItem="wrl-8T-0uo" firstAttribute="leading" secondItem="Cl3-iG-FEy" secondAttribute="leadingMargin" constant="53" id="kLP-X2-jx7"/>
+                            <constraint firstItem="TXO-O3-P6y" firstAttribute="centerX" secondItem="Cl3-iG-FEy" secondAttribute="centerX" id="nEC-Be-ygA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonConnect" destination="wrl-8T-0uo" id="VHR-9N-7NT"/>
+                        <outlet property="imageViewLogo" destination="TXO-O3-P6y" id="RAW-gH-i8a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMj-OR-Whq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866.39999999999998" y="38.23088455772114"/>
+        </scene>
         <!--Tinder View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -27,4 +76,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="clue" width="110" height="86"/>
+    </resources>
 </document>

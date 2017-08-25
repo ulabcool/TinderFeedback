@@ -19,6 +19,7 @@
 		C5FE59DD1F502A6A00C8483E /* FeedbackStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE59DC1F502A6A00C8483E /* FeedbackStore.swift */; };
 		C5FE59E01F502DF400C8483E /* TinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE59DF1F502DF400C8483E /* TinderViewModel.swift */; };
 		C5FE59E81F503B1700C8483E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE59E71F503B1700C8483E /* Utils.swift */; };
+		C5FE59EA1F5060E400C8483E /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE59E91F5060E400C8483E /* ConnectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C5FE59DC1F502A6A00C8483E /* FeedbackStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedbackStore.swift; path = ../FeedbackStore.swift; sourceTree = "<group>"; };
 		C5FE59DF1F502DF400C8483E /* TinderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TinderViewModel.swift; path = ../TinderViewModel.swift; sourceTree = "<group>"; };
 		C5FE59E71F503B1700C8483E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C5FE59E91F5060E400C8483E /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		DFA44C4031EAF475426DA01D /* Pods-TinderFeedback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderFeedback.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinderFeedback/Pods-TinderFeedback.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C5FE59C61F50111300C8483E /* TinderViewController.swift */,
+				C5FE59E91F5060E400C8483E /* ConnectViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				C5FE59C71F50111300C8483E /* TinderViewController.swift in Sources */,
 				C5FE59C51F50111300C8483E /* AppDelegate.swift in Sources */,
 				C5FE59D71F50261400C8483E /* FeedbackTinderView.swift in Sources */,
+				C5FE59EA1F5060E400C8483E /* ConnectViewController.swift in Sources */,
 				C5FE59D91F50279800C8483E /* FeedbackTinderViewModel.swift in Sources */,
 				C5FE59E81F503B1700C8483E /* Utils.swift in Sources */,
 			);
