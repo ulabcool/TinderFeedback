@@ -44,7 +44,7 @@ class TinderViewController: UIViewController {
     let buttonHate: UIButton = {
         let imageName = "cross"
         let button = UIButton(type: .custom)
-        button.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        button.backgroundColor = UIColor(white: 1.0, alpha: 0.25)
         button.setImage(UIImage(named: imageName), for: .normal)
         button.layer.cornerRadius = 35.0
         button.clipsToBounds = true
@@ -55,7 +55,7 @@ class TinderViewController: UIViewController {
         let imageName = "heart"
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: imageName), for: .normal)
-        button.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        button.backgroundColor = UIColor(white: 1.0, alpha: 0.25)
         button.layer.cornerRadius = 35.0
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +65,7 @@ class TinderViewController: UIViewController {
         let imageName = "share"
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: imageName), for: .normal)
-        button.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        button.backgroundColor = UIColor(white: 1.0, alpha: 0.25)
         button.layer.cornerRadius = 35.0
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -95,6 +95,17 @@ class TinderViewController: UIViewController {
 
         return label
     }()
+    
+    let labelFeedbackCount: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir-Light", size: 18)
+        label.textAlignment = .center
+        label.textColor = UIColor.white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "You got 5 new clues!"
+        
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,9 +116,14 @@ class TinderViewController: UIViewController {
 
 
         // add end labels
+        view.addSubview(labelFeedbackCount)
         view.addSubview(labelTitleEnd)
         view.addSubview(labelMessageEnd)
 
+        labelFeedbackCount.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        labelFeedbackCount.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        labelFeedbackCount.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        labelFeedbackCount.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
         
         labelMessageEnd.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         labelMessageEnd.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
@@ -118,7 +134,6 @@ class TinderViewController: UIViewController {
         labelTitleEnd.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         labelTitleEnd.bottomAnchor.constraint(equalTo: labelMessageEnd.topAnchor, constant: -10).isActive = true
         labelTitleEnd.heightAnchor.constraint(equalToConstant: 40).isActive = true
-
 
         // add options stack view
         view.addSubview(stackivew)
@@ -160,7 +175,7 @@ class TinderViewController: UIViewController {
         swipeView?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         swipeView?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         swipeView?.bottomAnchor.constraint(equalTo: stackivew.topAnchor, constant: -30).isActive = true
-        swipeView?.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
+        swipeView?.topAnchor.constraint(equalTo: labelFeedbackCount.bottomAnchor, constant: 10).isActive = true
     }
 
     func setupBackgroundFor(feedback: FeedbackModel) {
@@ -182,7 +197,7 @@ extension TinderViewController: MDCSwipeToChooseDelegate {
 
     // This is called when a user swipes the view fully left or right.
     func view(_ view: UIView, wasChosenWith: MDCSwipeDirection) -> Void {
-        setupBackgroundFor(feedback: viewModel.feedbackModels[currentFeedbackIndex])
+        
         currentFeedbackIndex += 1
 
         if wasChosenWith == .left {
@@ -191,8 +206,14 @@ extension TinderViewController: MDCSwipeToChooseDelegate {
             print("Photo saved!")
         }
         
-        if currentFeedbackIndex == self.viewModel.feedbackModels.count {
+        
+        if currentFeedbackIndex >= self.viewModel.feedbackModels.count {
             stackivew.alpha = 0.0
+            labelFeedbackCount.alpha = 0.0
+        } else {
+            let remainingClues = viewModel.feedbackModels.count - currentFeedbackIndex
+            labelFeedbackCount.text = "You got \(remainingClues) new clues"
+            setupBackgroundFor(feedback: viewModel.feedbackModels[remainingClues - 1])
         }
     }
 }
