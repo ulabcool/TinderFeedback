@@ -17,9 +17,10 @@ class FeedbackTinderView: MDCSwipeToChooseView {
     var labelFeedbackText: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.textAlignment = .center
         label.textColor = UIColor(red: 122/255, green: 122/255, blue: 122/255, alpha: 1.0)
         label.sizeToFit()
-        label.font = UIFont(name: "Avenir-Book", size: 20.0)
+        label.font = UIFont(name: "Avenir-Book", size: 18.0)
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label

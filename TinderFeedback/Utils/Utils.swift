@@ -31,10 +31,10 @@ class Utils {
     class func colorForRating(rating: Int) -> UIColor {
         var color: UIColor!
         switch rating {
-        case 0,1:
+        case 1,2:
             color = UIColor(red: 239 / 255.0, green: 120 / 255.0, blue: 96 / 255.0, alpha: 1.0)
-        case 2:
-            color = UIColor(red: 239 / 255.0, green: 120 / 255.0, blue: 96 / 255.0, alpha: 1.0)
+        case 3:
+            color = UIColor(red: 164 / 255.0, green: 202 / 255.0, blue: 217 / 255.0, alpha: 1.0)
         default:
             color = UIColor(red: 253 / 255.0, green: 212 / 255.0, blue: 97 / 255.0, alpha: 1.0)
         }
