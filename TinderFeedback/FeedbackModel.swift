@@ -24,7 +24,7 @@ class ClueModel {
     init(json: [String: Any]) {
         self.clueId = "\(json["id"] as! Int)"
         self.text = json["comment"] as! String
-        self.rating = json["id"] as! Int
+        self.rating = json["mood"] as! Int
         self.date = json["created_at"] as! String
     }
 }

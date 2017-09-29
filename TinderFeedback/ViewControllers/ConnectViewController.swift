@@ -89,7 +89,7 @@ class ConnectViewController: UIViewController {
         view.addSubview(imageViewLogo)
         imageViewLogo.translatesAutoresizingMaskIntoConstraints = false
         imageViewLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageViewLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        imageViewLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true
         imageViewLogo.widthAnchor.constraint(equalToConstant: 100).isActive = true
         imageViewLogo.heightAnchor.constraint(equalToConstant: 100).isActive = true
 
@@ -98,7 +98,7 @@ class ConnectViewController: UIViewController {
         labelError.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         labelError.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         labelError.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        labelError.topAnchor.constraint(equalTo: imageViewLogo.bottomAnchor, constant: 15).isActive = true
+        labelError.topAnchor.constraint(equalTo: imageViewLogo.bottomAnchor, constant: 10).isActive = true
         labelError.alpha = 0.0
 
         view.addSubview(textFieldEmail)
@@ -106,7 +106,7 @@ class ConnectViewController: UIViewController {
         textFieldEmail.leftAnchor.constraint(equalTo: view.leftAnchor, constant: margin).isActive = true
         textFieldEmail.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -margin).isActive = true
         textFieldEmail.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        textFieldEmail.topAnchor.constraint(equalTo: labelError.bottomAnchor, constant: 15).isActive = true
+        textFieldEmail.topAnchor.constraint(equalTo: labelError.bottomAnchor, constant: 10).isActive = true
 
         view.addSubview(textFieldPassword)
         textFieldPassword.translatesAutoresizingMaskIntoConstraints = false

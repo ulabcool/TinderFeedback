@@ -147,7 +147,8 @@ class TinderViewController: UIViewController {
 
     func loadClues() {
         FeedbackStore.loadFeedback().then { clues in
-            self.viewModel = TinderViewModel(feedbackModels: clues)
+            let orderedClues = clues.reversed() as [ClueModel]
+            self.viewModel = TinderViewModel(feedbackModels: orderedClues)
             let lastFeedback = self.viewModel.feedbackModels.last
 
             DispatchQueue.main.async {
