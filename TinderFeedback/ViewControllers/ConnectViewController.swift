@@ -76,6 +76,9 @@ class ConnectViewController: UIViewController {
         return label
     }()
 
+    let activityIndicator: UIActivityIndicatorView = {
+        return UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    }()
 
     let margin: CGFloat = 34
 
@@ -92,7 +95,7 @@ class ConnectViewController: UIViewController {
         imageViewLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true
         imageViewLogo.widthAnchor.constraint(equalToConstant: 100).isActive = true
         imageViewLogo.heightAnchor.constraint(equalToConstant: 100).isActive = true
-
+        
         view.addSubview(labelError)
         labelError.translatesAutoresizingMaskIntoConstraints = false
         labelError.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
@@ -100,6 +103,14 @@ class ConnectViewController: UIViewController {
         labelError.heightAnchor.constraint(equalToConstant: 50).isActive = true
         labelError.topAnchor.constraint(equalTo: imageViewLogo.bottomAnchor, constant: 10).isActive = true
         labelError.alpha = 0.0
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerXAnchor.constraint(equalTo: labelError.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: labelError.centerYAnchor).isActive = true
+        activityIndicator.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        activityIndicator.stopAnimating()
 
         view.addSubview(textFieldEmail)
         textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
@@ -136,6 +147,9 @@ class ConnectViewController: UIViewController {
 
 
     @IBAction func connectAction(_ sender: Any) {
+        
+        activityIndicator.startAnimating()
+        
         let userEmail = textFieldEmail.text
         let userPassword = textFieldPassword.text
         self.view.endEditing(true)
@@ -144,12 +158,14 @@ class ConnectViewController: UIViewController {
             print(clue.text)
 
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 let tinderVC = TinderViewController()
                 self.present(tinderVC, animated: true, completion: nil)
             }
         }.catch { _ in
 
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.labelError.alpha = 1.0
             }
             print("not right !")

@@ -17,6 +17,20 @@ class TinderViewController: UIViewController {
     let buttonSize: CGFloat = 70
     let stackViewSpacing: CGFloat = 10
 
+    var cluesList: [ClueModel]?
+    
+    var buttonLoadMore: UIButton = {
+        let button = UIButton(type: .system)
+        button.layer.cornerRadius = 6.0
+        button.layer.borderWidth = 3.0
+        button.layer.borderColor = UIColor.white.cgColor
+        button.backgroundColor = UIColor(white: 1, alpha: 0.2)
+        button.titleLabel?.font = Utils.clueBoldFont(size: 17)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Load More", for: .normal)
+        return button
+    }()
+
     lazy var options: MDCSwipeToChooseViewOptions = {
         let options = MDCSwipeToChooseViewOptions()
         options.delegate = self
@@ -130,6 +144,14 @@ class TinderViewController: UIViewController {
         labelTitleEnd.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         labelTitleEnd.bottomAnchor.constraint(equalTo: labelMessageEnd.topAnchor, constant: -10).isActive = true
         labelTitleEnd.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        view.addSubview(buttonLoadMore)
+        buttonLoadMore.translatesAutoresizingMaskIntoConstraints = false
+        buttonLoadMore.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 34).isActive = true
+        buttonLoadMore.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -34).isActive = true
+        buttonLoadMore.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        buttonLoadMore.topAnchor.constraint(equalTo: labelMessageEnd.bottomAnchor, constant: 20).isActive = true
+        
 
         // add options stack view
         view.addSubview(stackivew)
@@ -140,19 +162,25 @@ class TinderViewController: UIViewController {
         stackivew.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
 
         addOptionsView()
+        
+        buttonLoadMore.addTarget(self, action: #selector(loadClues), for: .touchUpInside)
 
         loadClues()
-
     }
+    
 
     func loadClues() {
         FeedbackStore.loadFeedback().then { clues in
-            let orderedClues = clues.reversed() as [ClueModel]
-            self.viewModel = TinderViewModel(feedbackModels: orderedClues)
+            
+            self.currentFeedbackIndex = 0
+            self.cluesList = clues.reversed() as [ClueModel]
+            self.viewModel = TinderViewModel(feedbackModels: self.cluesList!)
             let lastFeedback = self.viewModel.feedbackModels.last
 
             DispatchQueue.main.async {
                 self.setupBackgroundFor(feedback: lastFeedback!)
+                self.labelFeedbackCount.text = "You got \(clues.count) new clues"
+                self.labelFeedbackCount.alpha = 1
                 for i in 0..<self.viewModel.feedbackModels.count {
                     self.addView(index: i)
                 }
@@ -175,8 +203,13 @@ class TinderViewController: UIViewController {
         buttonLove.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
         buttonLove.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
 
+        buttonHate.addTarget(self, action: #selector(hateButtonAction), for: .touchUpInside)
     }
 
+    func hateButtonAction() {
+        self.dismiss(animated: true, completion: nil)
+
+    }
     func addView(index: Int) {
         let swipeView = FeedbackTinderView(viewModel: viewModel.viewModelForIndex(index: index), frame: self.view.bounds, options: options)
         self.view.addSubview(swipeView!)
@@ -208,18 +241,22 @@ extension TinderViewController: MDCSwipeToChooseDelegate {
     // This is called when a user swipes the view fully left or right.
     func view(_ view: UIView, wasChosenWith: MDCSwipeDirection) -> Void {
 
+        let clue = self.viewModel.feedbackModels[viewModel.feedbackModels.count - currentFeedbackIndex - 1]
+
         currentFeedbackIndex += 1
 
         if wasChosenWith == .left {
             print("Photo deleted!")
-        } else {
+        } else if wasChosenWith == .right {
             print("Photo saved!")
+            _ = NetworkManager().submitAction(action: "like", clue: clue)
         }
 
-
         if currentFeedbackIndex >= self.viewModel.feedbackModels.count {
-            stackivew.alpha = 0.0
+//            stackivew.alpha = 0.0
             labelFeedbackCount.alpha = 0.0
+//            self.loadClues()
+            
         } else {
             let remainingClues = viewModel.feedbackModels.count - currentFeedbackIndex
             labelFeedbackCount.text = "You got \(remainingClues) new clues"
