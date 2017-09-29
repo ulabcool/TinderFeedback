@@ -95,26 +95,22 @@ class TinderViewController: UIViewController {
 
         return label
     }()
-    
+
     let labelFeedbackCount: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir-Light", size: 18)
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "You got 5 new clues!"
-        
+        label.text = ""
+
         return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = TinderViewModel(feedbackModels: FeedbackStore.loadFeedback())
 
-        let lastFeedback = self.viewModel.feedbackModels.last
-        setupBackgroundFor(feedback: lastFeedback!)
-
-
+        view.backgroundColor = Utils.colorForRating(rating: 5)
         // add end labels
         view.addSubview(labelFeedbackCount)
         view.addSubview(labelTitleEnd)
@@ -124,12 +120,12 @@ class TinderViewController: UIViewController {
         labelFeedbackCount.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         labelFeedbackCount.heightAnchor.constraint(equalToConstant: 60).isActive = true
         labelFeedbackCount.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
-        
+
         labelMessageEnd.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         labelMessageEnd.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         labelMessageEnd.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         labelMessageEnd.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
+
         labelTitleEnd.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         labelTitleEnd.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         labelTitleEnd.bottomAnchor.constraint(equalTo: labelMessageEnd.topAnchor, constant: -10).isActive = true
@@ -145,8 +141,21 @@ class TinderViewController: UIViewController {
 
         addOptionsView()
 
-        for i in 0..<self.viewModel.feedbackModels.count {
-            addView(index: i)
+        loadClues()
+
+    }
+
+    func loadClues() {
+        FeedbackStore.loadFeedback().then { clues in
+            self.viewModel = TinderViewModel(feedbackModels: clues)
+            let lastFeedback = self.viewModel.feedbackModels.last
+
+            DispatchQueue.main.async {
+                self.setupBackgroundFor(feedback: lastFeedback!)
+                for i in 0..<self.viewModel.feedbackModels.count {
+                    self.addView(index: i)
+                }
+            }
         }
     }
 
@@ -197,7 +206,7 @@ extension TinderViewController: MDCSwipeToChooseDelegate {
 
     // This is called when a user swipes the view fully left or right.
     func view(_ view: UIView, wasChosenWith: MDCSwipeDirection) -> Void {
-        
+
         currentFeedbackIndex += 1
 
         if wasChosenWith == .left {
@@ -205,8 +214,8 @@ extension TinderViewController: MDCSwipeToChooseDelegate {
         } else {
             print("Photo saved!")
         }
-        
-        
+
+
         if currentFeedbackIndex >= self.viewModel.feedbackModels.count {
             stackivew.alpha = 0.0
             labelFeedbackCount.alpha = 0.0

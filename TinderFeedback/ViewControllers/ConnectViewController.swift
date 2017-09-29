@@ -66,6 +66,17 @@ class ConnectViewController: UIViewController {
         return tf
     }()
 
+    var labelError: UILabel = {
+        let label = UILabel()
+        label.font = Utils.clueFont(size: 15)
+        label.textColor = .white
+        label.backgroundColor = Utils.errorColor()
+        label.textAlignment = .center
+        label.text = "Email/Password is not correct! Try again"
+        return label
+    }()
+
+
     let margin: CGFloat = 34
 
     override func viewDidLoad() {
@@ -82,12 +93,20 @@ class ConnectViewController: UIViewController {
         imageViewLogo.widthAnchor.constraint(equalToConstant: 100).isActive = true
         imageViewLogo.heightAnchor.constraint(equalToConstant: 100).isActive = true
 
+        view.addSubview(labelError)
+        labelError.translatesAutoresizingMaskIntoConstraints = false
+        labelError.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        labelError.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        labelError.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        labelError.topAnchor.constraint(equalTo: imageViewLogo.bottomAnchor, constant: 15).isActive = true
+        labelError.alpha = 0.0
+
         view.addSubview(textFieldEmail)
         textFieldEmail.translatesAutoresizingMaskIntoConstraints = false
         textFieldEmail.leftAnchor.constraint(equalTo: view.leftAnchor, constant: margin).isActive = true
         textFieldEmail.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -margin).isActive = true
         textFieldEmail.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        textFieldEmail.topAnchor.constraint(equalTo: imageViewLogo.bottomAnchor, constant: 25).isActive = true
+        textFieldEmail.topAnchor.constraint(equalTo: labelError.bottomAnchor, constant: 15).isActive = true
 
         view.addSubview(textFieldPassword)
         textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
@@ -104,6 +123,10 @@ class ConnectViewController: UIViewController {
         buttonConnect.topAnchor.constraint(equalTo: textFieldPassword.bottomAnchor, constant: 20).isActive = true
 
         buttonConnect.addTarget(self, action: #selector(connectAction(_:)), for: .touchUpInside)
+
+
+        textFieldPassword.text = "bougamza"
+        textFieldEmail.text = "adil"
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,18 +143,15 @@ class ConnectViewController: UIViewController {
         networkManager.login(login: userEmail!, password: userPassword!).then { clue in
             print(clue.text)
 
-
-            self.networkManager.getClues().then(execute: { clues in
-                for clue in clues {
-                    print(clue.text)
-                }
-            })
-
-//            DispatchQueue.main.async {
-//                let tinderVC = TinderViewController()
-//                self.present(tinderVC, animated: true, completion: nil)
-//            }
+            DispatchQueue.main.async {
+                let tinderVC = TinderViewController()
+                self.present(tinderVC, animated: true, completion: nil)
+            }
         }.catch { _ in
+
+            DispatchQueue.main.async {
+                self.labelError.alpha = 1.0
+            }
             print("not right !")
         }
     }

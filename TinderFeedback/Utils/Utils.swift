@@ -38,6 +38,11 @@ focus color
  B: 170
  
  
+ orange
+ 
+ R: 239
+ G: 120
+ B: 96
 */
 
 class Utils {
@@ -60,6 +65,9 @@ class Utils {
     }
     class func textFieldColor() -> UIColor {
         return UIColor(red: 170 / 255.0, green: 170 / 255.0, blue: 170 / 255.0, alpha: 1.0)
+    }
+    class func errorColor() -> UIColor {
+        return UIColor(red: 239 / 255.0, green: 120 / 255.0, blue: 96 / 255.0, alpha: 1.0)
     }
     
     class func clueFont(size: CGFloat) -> UIFont {

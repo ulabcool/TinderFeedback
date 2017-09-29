@@ -10,19 +10,23 @@ import Foundation
 
 
 class FeedbackStore {
-    class func loadFeedback() -> [ClueModel] {
-        let feedbackModels = [
-            ClueModel(clueId:"id1", rating: 1, text: "I’m struggling to view all the feedback, and a message appears saying that the page doesn’t exist", date: "08 August 2017, 14:29:03"),
-            
-            ClueModel(clueId:"id1", rating: 5, text: "Very user-friendly and easy to use. Also very competent and engaging Support.", date: "15 August 2017, 12:04:07"),
-            
-            ClueModel(clueId:"id1", rating: 3, text: "It would be super useful to have a 'preview' option directly from the hamburger dots menu. Now I have to go into Edit mode to see what the survey looks like", date: "06 June 2017, 11:08:07"),
-            
-            ClueModel(clueId:"id1", rating: 4, text: "Hi there, I just requested a demo, but I'm really after some price indication and compliance information in regards to user data collection of those leaving feedback - I'm asking this on behalf of a public service organisation in the UK (Transport for London / tfl.gov.uk ) Kind regards, Elmer Zinkhann", date: "11 April 2017, 14:29:03"),
-            
-            ClueModel(clueId:"id1", rating: 2, text: "I would like an easy way to respond to the user's feedback. It seems you used to provide this, but now I don't see how to quickly reply without copying the email address and opening my email client.", date: "09 May 2017, 19:21:07")
-        ]
-
-        return feedbackModels
+    class func loadFeedback() -> Promise<[ClueModel]> {
+        
+        return NetworkManager().getClues()
+        
+        
+//        let feedbackModels = [
+//            ClueModel(clueId:"id1", rating: 1, text: "I’m struggling to view all the feedback, and a message appears saying that the page doesn’t exist", date: "08 August 2017, 14:29:03"),
+//            
+//            ClueModel(clueId:"id1", rating: 5, text: "Very user-friendly and easy to use. Also very competent and engaging Support.", date: "15 August 2017, 12:04:07"),
+//            
+//            ClueModel(clueId:"id1", rating: 3, text: "It would be super useful to have a 'preview' option directly from the hamburger dots menu. Now I have to go into Edit mode to see what the survey looks like", date: "06 June 2017, 11:08:07"),
+//            
+//            ClueModel(clueId:"id1", rating: 4, text: "Hi there, I just requested a demo, but I'm really after some price indication and compliance information in regards to user data collection of those leaving feedback - I'm asking this on behalf of a public service organisation in the UK (Transport for London / tfl.gov.uk ) Kind regards, Elmer Zinkhann", date: "11 April 2017, 14:29:03"),
+//            
+//            ClueModel(clueId:"id1", rating: 2, text: "I would like an easy way to respond to the user's feedback. It seems you used to provide this, but now I don't see how to quickly reply without copying the email address and opening my email client.", date: "09 May 2017, 19:21:07")
+//        ]
+//
+//        return feedbackModels
     }
 }
