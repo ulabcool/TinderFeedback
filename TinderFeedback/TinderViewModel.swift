@@ -10,9 +10,9 @@ import Foundation
 
 class TinderViewModel {
 
-    var feedbackModels: [FeedbackModel]!
+    var feedbackModels: [ClueModel]!
     
-    init(feedbackModels: [FeedbackModel]) {
+    init(feedbackModels: [ClueModel]) {
         self.feedbackModels = feedbackModels
     }
     

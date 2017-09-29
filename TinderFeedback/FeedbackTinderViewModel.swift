@@ -10,12 +10,12 @@ import Foundation
 
 class FeedbackTinderViewModel {
     
-    let model: FeedbackModel!
+    let model: ClueModel!
     var feedbackText: String
     var ratingImage: String
     var feedbackDate: String
     
-    init(model: FeedbackModel) {
+    init(model: ClueModel) {
         self.model = model
         
         self.feedbackText = model.text

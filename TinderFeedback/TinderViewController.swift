@@ -178,7 +178,7 @@ class TinderViewController: UIViewController {
         swipeView?.topAnchor.constraint(equalTo: labelFeedbackCount.bottomAnchor, constant: 10).isActive = true
     }
 
-    func setupBackgroundFor(feedback: FeedbackModel) {
+    func setupBackgroundFor(feedback: ClueModel) {
         view.backgroundColor = Utils.colorForRating(rating: feedback.rating)
     }
 }
