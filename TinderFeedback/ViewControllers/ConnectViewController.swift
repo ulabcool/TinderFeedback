@@ -31,7 +31,11 @@ class ConnectViewController: UIViewController {
     
 
     @IBAction func connectAction(_ sender: Any) {
-        NetworkManager.login(login: "adazddil", password: "bougamza")
+        NetworkManager.login(login: "adil", password: "bougamza").then { clue in
+            print(clue.text)
+            }.catch { _ in
+                print("not right !")
+        }
 //        let tinderVC = TinderViewController()
 //        present(tinderVC, animated: true, completion: nil)
     }

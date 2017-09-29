@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47F9AD873D2AA6AA43B6738B /* Pods_TinderFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1EE289C3C82663588E10A8 /* Pods_TinderFeedback.framework */; };
+		C51A6CAE1F7E46C4000EDF63 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51A6CAD1F7E46C4000EDF63 /* Promise.swift */; };
 		C530A9661F7E3D3D007A701B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C530A9651F7E3D3D007A701B /* NetworkManager.swift */; };
 		C5FE59C51F50111300C8483E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE59C41F50111300C8483E /* AppDelegate.swift */; };
 		C5FE59C71F50111300C8483E /* TinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE59C61F50111300C8483E /* TinderViewController.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		1B1EE289C3C82663588E10A8 /* Pods_TinderFeedback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinderFeedback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5619514CCC90C2C84B0D48C2 /* Pods-TinderFeedback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderFeedback.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinderFeedback/Pods-TinderFeedback.release.xcconfig"; sourceTree = "<group>"; };
+		C51A6CAD1F7E46C4000EDF63 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		C530A9651F7E3D3D007A701B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C5FE59C11F50111300C8483E /* TinderFeedback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderFeedback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5FE59C41F50111300C8483E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				C530A9651F7E3D3D007A701B /* NetworkManager.swift */,
+				C51A6CAD1F7E46C4000EDF63 /* Promise.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				C5FE59C51F50111300C8483E /* AppDelegate.swift in Sources */,
 				C5FE59D71F50261400C8483E /* FeedbackTinderView.swift in Sources */,
 				C5FE59EA1F5060E400C8483E /* ConnectViewController.swift in Sources */,
+				C51A6CAE1F7E46C4000EDF63 /* Promise.swift in Sources */,
 				C5FE59D91F50279800C8483E /* FeedbackTinderViewModel.swift in Sources */,
 				C5FE59E81F503B1700C8483E /* Utils.swift in Sources */,
 			);
