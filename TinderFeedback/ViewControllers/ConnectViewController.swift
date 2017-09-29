@@ -136,8 +136,8 @@ class ConnectViewController: UIViewController {
         buttonConnect.addTarget(self, action: #selector(connectAction(_:)), for: .touchUpInside)
 
 
-        textFieldPassword.text = "bougamza"
-        textFieldEmail.text = "adil"
+//        textFieldPassword.text = "bougamza"
+//        textFieldEmail.text = "adil"
     }
 
     override func didReceiveMemoryWarning() {

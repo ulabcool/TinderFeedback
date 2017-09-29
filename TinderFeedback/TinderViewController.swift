@@ -30,6 +30,10 @@ class TinderViewController: UIViewController {
         button.setTitle("Load More", for: .normal)
         return button
     }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        return UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    }()
 
     lazy var options: MDCSwipeToChooseViewOptions = {
         let options = MDCSwipeToChooseViewOptions()
@@ -142,7 +146,7 @@ class TinderViewController: UIViewController {
 
         labelTitleEnd.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         labelTitleEnd.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        labelTitleEnd.bottomAnchor.constraint(equalTo: labelMessageEnd.topAnchor, constant: -10).isActive = true
+        labelTitleEnd.bottomAnchor.constraint(equalTo: labelMessageEnd.topAnchor, constant: -18).isActive = true
         labelTitleEnd.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         view.addSubview(buttonLoadMore)
@@ -152,6 +156,14 @@ class TinderViewController: UIViewController {
         buttonLoadMore.heightAnchor.constraint(equalToConstant: 50).isActive = true
         buttonLoadMore.topAnchor.constraint(equalTo: labelMessageEnd.bottomAnchor, constant: 20).isActive = true
         
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicator.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        activityIndicator.bottomAnchor.constraint(equalTo: labelTitleEnd.topAnchor, constant: -18).isActive = true
+        activityIndicator.stopAnimating()
 
         // add options stack view
         view.addSubview(stackivew)
@@ -170,6 +182,7 @@ class TinderViewController: UIViewController {
     
 
     func loadClues() {
+        activityIndicator.startAnimating()
         FeedbackStore.loadFeedback().then { clues in
             
             self.currentFeedbackIndex = 0
@@ -178,9 +191,11 @@ class TinderViewController: UIViewController {
             let lastFeedback = self.viewModel.feedbackModels.last
 
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.setupBackgroundFor(feedback: lastFeedback!)
                 self.labelFeedbackCount.text = "You got \(clues.count) new clues"
                 self.labelFeedbackCount.alpha = 1
+                self.stackivew.alpha = 1.0
                 for i in 0..<self.viewModel.feedbackModels.count {
                     self.addView(index: i)
                 }
@@ -253,7 +268,7 @@ extension TinderViewController: MDCSwipeToChooseDelegate {
         }
 
         if currentFeedbackIndex >= self.viewModel.feedbackModels.count {
-//            stackivew.alpha = 0.0
+            stackivew.alpha = 0.0
             labelFeedbackCount.alpha = 0.0
 //            self.loadClues()
             
