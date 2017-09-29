@@ -31,8 +31,9 @@ class ConnectViewController: UIViewController {
     
 
     @IBAction func connectAction(_ sender: Any) {
-        let tinderVC = TinderViewController()
-        present(tinderVC, animated: true, completion: nil)
+        NetworkManager.login(login: "adazddil", password: "bougamza")
+//        let tinderVC = TinderViewController()
+//        present(tinderVC, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
