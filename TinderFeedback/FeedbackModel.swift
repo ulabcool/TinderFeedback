@@ -20,4 +20,11 @@ class ClueModel {
         self.rating = rating
         self.date = date
     }
+    
+    init(json: [String: Any]) {
+        self.clueId = "\(json["id"] as! Int)"
+        self.text = json["comment"] as! String
+        self.rating = json["id"] as! Int
+        self.date = json["created_at"] as! String
+    }
 }

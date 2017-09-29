@@ -10,6 +10,8 @@ import UIKit
 
 class ConnectViewController: UIViewController {
 
+    var networkManager: NetworkManager!
+
     var buttonConnect: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 6.0
@@ -69,6 +71,7 @@ class ConnectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        networkManager = NetworkManager()
         // Do any additional setup after loading the view.
         buttonConnect.setTitle("Connect To Usbailla", for: .normal)
 
@@ -108,21 +111,28 @@ class ConnectViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+
     @IBAction func connectAction(_ sender: Any) {
         let userEmail = textFieldEmail.text
         let userPassword = textFieldPassword.text
+        self.view.endEditing(true)
         // Network request
-        NetworkManager.login(login: userEmail!, password: userPassword!).then { clue in
+        networkManager.login(login: userEmail!, password: userPassword!).then { clue in
             print(clue.text)
 
-            DispatchQueue.main.async {
-                let tinderVC = TinderViewController()
-                self.present(tinderVC, animated: true, completion: nil)
-            }
+
+            self.networkManager.getClues().then(execute: { clues in
+                for clue in clues {
+                    print(clue.text)
+                }
+            })
+
+//            DispatchQueue.main.async {
+//                let tinderVC = TinderViewController()
+//                self.present(tinderVC, animated: true, completion: nil)
+//            }
         }.catch { _ in
             print("not right !")
         }
-
-
     }
 }

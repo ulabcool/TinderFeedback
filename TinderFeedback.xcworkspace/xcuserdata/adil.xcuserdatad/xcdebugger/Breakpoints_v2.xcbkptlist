@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderFeedback/TinderViewController.swift"
-            timestampString = "528378009.633201"
+            timestampString = "528379185.916729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderFeedback/TinderViewController.swift"
-            timestampString = "528378009.633278"
+            timestampString = "528379185.916798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
@@ -42,13 +42,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderFeedback/Utils/Utils.swift"
-            timestampString = "528378009.633331"
+            timestampString = "528379185.916848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
             landmarkName = "colorForRating(rating:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TinderFeedback.Utils.colorForRating (rating : Swift.Int) -&gt; __ObjC.UIColor"
+                  moduleName = "TinderFeedback"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adil/Documents/ulab/TinderFeedback/TinderFeedback/Utils/Utils.swift"
+                  timestampString = "528380623.573331"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TinderFeedback.Utils.colorForRating (rating : Swift.Int) -&gt; __ObjC.UIColor"
+                  moduleName = "TinderFeedback"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adil/Documents/ulab/TinderFeedback/TinderFeedback/Utils/Utils.swift"
+                  timestampString = "528380623.574825"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderFeedback/Utils/Utils.swift"
-            timestampString = "528378009.63338"
+            timestampString = "528379185.916896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -74,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderFeedback/TinderViewController.swift"
-            timestampString = "528378009.633426"
+            timestampString = "528379185.916941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
@@ -90,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderFeedback/NetworkManager/NetworkManager.swift"
-            timestampString = "528378009.633477"
+            timestampString = "528380480.051261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "login(login:password:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "getClues()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +138,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderFeedback/NetworkManager/NetworkManager.swift"
-            timestampString = "528378009.633532"
+            timestampString = "528380481.203438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "login(login:password:)"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "getClues()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TinderFeedback.NetworkManager.(getClues () -&gt; TinderFeedback.Promise&lt;Swift.Array&lt;TinderFeedback.ClueModel&gt;&gt;).(closure #2)"
+                  moduleName = "TinderFeedback"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adil/Documents/ulab/TinderFeedback/TinderFeedback/NetworkManager/NetworkManager.swift"
+                  timestampString = "528380623.586964"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TinderFeedback.NetworkManager.(getClues () -&gt; TinderFeedback.Promise&lt;Swift.Array&lt;TinderFeedback.ClueModel&gt;&gt;).(closure #2).(closure #1)"
+                  moduleName = "TinderFeedback"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adil/Documents/ulab/TinderFeedback/TinderFeedback/NetworkManager/NetworkManager.swift"
+                  timestampString = "528380623.588346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TinderFeedback/NetworkManager/NetworkManager.swift"
+            timestampString = "528380486.338606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "getClues()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,28 +202,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderFeedback/NetworkManager/NetworkManager.swift"
-            timestampString = "528378009.633579"
+            timestampString = "528380490.019184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "login(login:password:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TinderFeedback/ViewControllers/ConnectViewController.swift"
-            timestampString = "528378009.633633"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "connectAction(_:)"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getClues()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
