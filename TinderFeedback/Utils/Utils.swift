@@ -25,6 +25,19 @@ Colour Yellow:
 R: 253
 G: 212
 B: 97
+ 
+focus color
+ R: 227
+ G: 189
+ B: 86
+
+ 
+ textfield gray color
+ R: 170
+ G: 170
+ B: 170
+ 
+ 
 */
 
 class Utils {
@@ -40,5 +53,19 @@ class Utils {
         }
 
         return color
+    }
+    
+    class func focusColor() -> UIColor {
+        return UIColor(red: 227 / 255.0, green: 189 / 255.0, blue: 86 / 255.0, alpha: 1.0)
+    }
+    class func textFieldColor() -> UIColor {
+        return UIColor(red: 170 / 255.0, green: 170 / 255.0, blue: 170 / 255.0, alpha: 1.0)
+    }
+    
+    class func clueFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "Avenir-Light", size: size)!
+    }
+    class func clueBoldFont(size: CGFloat) -> UIFont {
+        return UIFont(name: "Avenir-Black", size: size)!
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkManager {
 
-    static let basicUrl = "https://a4fa1f62.ngrok.io/"
+    static let basicUrl = "https://bdda3aa4.ngrok.io/"
     static let loginUrl = "login"
     static let clues = "clues"
 
